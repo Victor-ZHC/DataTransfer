@@ -1,8 +1,8 @@
 /**
  * Created by 13416 on 2016-10-19.
  */
-var Memcached = require('memcached');
-var memcachedConfig = require('../config/memcachedConfig');
+var Memcached = require("memcached");
+var memcachedConfig = require("../config/memcachedConfig");
 
 var memcached = new Memcached(memcachedConfig["locations"]);
 
@@ -68,15 +68,15 @@ var DATA_OPERATIONS_TEST_4 = {
 
 
 
-memcached.set('zhc', {'value': "123"}, 0, function (err) {
+memcached.set("zhc", {"value": "123"}, 0, function (err) {
     if(err){
-        console.log('set error' + JSON.stringify(err));
+        console.log("set error" + JSON.stringify(err));
     }
 });
 
-// memcached.get('DATA_OPERATIONS_TEST_1', function (err, data) {
+// memcached.get("DATA_OPERATIONS_TEST_1", function (err, data) {
 //     if(err){
-//         console.log('get error' + JSON.stringify(err));
+//         console.log("get error" + JSON.stringify(err));
 //     } else {
 //         console.log(JSON.stringify(data));
 //     }

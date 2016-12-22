@@ -1,13 +1,13 @@
 /**
  * Created by 13416 on 2016-10-19.
  */
-var http = require('http');
+var http = require("http");
 
 var options = {
     "path":"127.0.0.1",
     "port":"3000",
     "method":"POST",
-    'path':'/'
+    "path":"/"
 };
 
 var request = http.request(options, function (res) {
@@ -15,7 +15,7 @@ var request = http.request(options, function (res) {
     res.on("data",function(chunk){
         data += chunk;
     });
-    res.on('end',function(){
+    res.on("end",function(){
         console.log(JSON.parse(data.toString()));//返回JSON字符串为data.toString()
     });
 });

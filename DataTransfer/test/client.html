@@ -14,14 +14,14 @@
                 "name":id
             };
             $.ajax({
-                'url':"http://139.224.57.175:3000/",
-                'type':"get",
-                'data': option,
-                'dataType': "html", //因为是调用nodeJS返回的json数据，所以必须使用binary类型
-                'error': function(){
+                "url":"http://139.224.57.175:3000/",
+                "type":"get",
+                "data": option,
+                "dataType": "html", //因为是调用nodeJS返回的json数据，所以必须使用binary类型
+                "error": function(){
 
                 },
-                'success': function(data){
+                "success": function(data){
                     document.getElementById("res").innerHTML = "";
                     data = JSON.parse(data);
                     for(var i in data){
