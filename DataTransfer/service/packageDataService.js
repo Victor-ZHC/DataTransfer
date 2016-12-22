@@ -7,7 +7,7 @@ var logger = require("../logging/logger")();
 exports.packageDataByID = function (name, cb) {
     memcacahedDAO.getDataFromMemcachedByID(name, function (err, data) {
         if(data){
-            data["timestamp"] = new Date().getTime();
+            data['timestamp'] = new Date().getTime();
             var msg = {"header": "res", "data": data};
             cb(null, msg);
             logger.info("packageDataService success " + JSON.stringify(msg));

@@ -21,9 +21,9 @@ var mimetype = {
     svg: "image/svg+xml"
 };
 
-var page_404 = function(req, res, path){
+var pageNotFound = function(req, res, path){
     res.writeHead(404, {
-        "Content-Type": mimetype["html"]
+        "Content-Type": mimetype['html']
     });
     res.write("<!doctype html>\n");
     res.write("<title>404 Not Found</title>\n");
@@ -47,12 +47,12 @@ http.createServer(function (req, res) {
 
         var data = require("url").parse(req.url,true).query;
 
-        if(data["header"] == "req" && data["name"]){
+        if(data['header'] == "req" && data['name']){
 
-            var name = data["name"];
+            var name = data['name'];
 
             res.writeHead(200, {
-                "Content-Type": mimetype["json"],
+                "Content-Type": mimetype['json'],
                 "Access-Control-Allow-Origin":"*",
                 "Access-Control-Allow-Methods":"GET"
             });
@@ -71,16 +71,16 @@ http.createServer(function (req, res) {
 
         } else {
             logger.error("http Server data format is wrong");
-            return page_404(req, res, pathname);
+            return pageNotFound(req, res, pathname);
         }
 
     } else {
         logger.error("http Server request is not from fore-end");
-        return page_404(req, res, pathname);
+        return pageNotFound(req, res, pathname);
     }
 
-}).listen(portConfig["app"]);
-logger.info("http Server server is listening at port: " + portConfig["app"]);
+}).listen(portConfig['app']);
+logger.info("http Server server is listening at port: " + portConfig['app']);
 
 // http.createServer(function (req, res) {
 //     res.writeHead(200,{"Content-Type":"text/plain","charset":"utf-8","Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET"});

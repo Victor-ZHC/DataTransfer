@@ -5,7 +5,7 @@ var Memcached = require("memcached");
 var memcachedConfig = require("../config/memcachedConfig");
 var logger = require("../logging/logger")();
 
-var memcached = new Memcached(memcachedConfig["locations"]);
+var memcached = new Memcached(memcachedConfig['locations']);
 
 exports.getDataFromMemcachedByID = function(name, cb){
     memcached.get(name, function (err, data) {

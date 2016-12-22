@@ -5,8 +5,9 @@ var log4js = require("log4js");
 var logConfig = require("../config/logConfig.json");
 var fs = require("fs");
 
-if (!fs.existsSync(logConfig["logFilePath"]))
-    fs.mkdirSync(logConfig["logFilePath"]);
+if (!fs.existsSync(logConfig['logFilePath'])){
+    fs.mkdirSync(logConfig['logFilePath']);
+}
 
 //qa config
 log4js.configure(logConfig);
