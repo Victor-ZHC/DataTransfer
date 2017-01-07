@@ -1,5 +1,5 @@
 /**
- * Created by 13416 on 2016-10-15.
+ * memcache数据访问
  */
 var Memcached = require("memcached");
 var memcachedConfig = require("../config/memcachedConfig");
@@ -7,6 +7,11 @@ var logger = require("../logging/logger")();
 
 var memcached = new Memcached(memcachedConfig['locations']);
 
+/**
+ * memcache数据访问函数
+ * @param name
+ * @param cb
+ */
 exports.getDataFromMemcachedByID = function(name, cb){
     memcached.get(name, function (err, data) {
         if(data){

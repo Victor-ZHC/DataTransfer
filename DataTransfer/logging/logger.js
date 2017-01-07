@@ -1,5 +1,5 @@
 /**
- * Created by 13416 on 2016-10-22.
+ * log管理
  */
 var log4js = require("log4js");
 var logConfig = require("../config/logConfig.json");

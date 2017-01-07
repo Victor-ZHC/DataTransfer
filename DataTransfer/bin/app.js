@@ -1,5 +1,5 @@
 /**
- * Created by 13416 on 2016-10-15.
+ * 程序入口
  */
 var http = require("http");
 var url = require("url");
@@ -21,6 +21,12 @@ var mimetype = {
     svg: "image/svg+xml"
 };
 
+/**
+ * 处理pageNotFound
+ * @param req
+ * @param res
+ * @param path
+ */
 var pageNotFound = function(req, res, path){
     res.writeHead(404, {
         "Content-Type": mimetype['html']
@@ -36,6 +42,9 @@ var pageNotFound = function(req, res, path){
     res.end();
 };
 
+/**
+ * 开启端口监听
+ */
 http.createServer(function (req, res) {
 
     var pathname = url.parse(req.url).pathname;

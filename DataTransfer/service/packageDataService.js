@@ -1,5 +1,5 @@
 /**
- * Created by 13416 on 2016-10-19.
+ * 数据打包
  */
 var memcacahedDAO = require("../dao/memcachedDAO");
 var logger = require("../logging/logger")();
